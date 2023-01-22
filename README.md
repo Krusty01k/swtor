@@ -1,2 +1,2 @@
-# swtor
-Nur für Coole Leute. 
+# SWTOR - Character System
+(by Leon and Max)
