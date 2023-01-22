@@ -2,13 +2,16 @@ SWTOR.CHARACTER.Config = {}
 
 SWTOR.CHARACTER.Config.MaxCharacter = 5 -- Max Character
 SWTOR.CHARACTER.Config.Factions = {
-    ["Imperium"] = {
-        TEAM_AKOLYTH,
+    ["imperium"] = {
+        name = "Imperium",
+        job = TEAM_AKOLYTH,
     },
-    ["Republik"] = {
+    ["republik"] = {
+        name = "Republik",
         TEAM_STUDENT,
     },
-    ["Neutral"] = {
+    ["neutral"] = {
+        name = "Neutral",
         TEAM_CIVILIAN,  
     },
 }
