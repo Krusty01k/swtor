@@ -2,16 +2,17 @@ SWTOR.CHARACTER.Config = {}
 
 SWTOR.CHARACTER.Config.MaxCharacter = 5 -- Max Character
 SWTOR.CHARACTER.Config.Factions = {
-    ["imperium"] = {
-        name = "Imperium",
-        job = TEAM_AKOLYTH,
+    {
+        name = "Sith-Imperium", -- Name of the Faction
+        icon = Material("swtor_charsys/sith_logo.png"), -- Icon of the Faction (showed in the faction selection)
     },
-    ["republik"] = {
-        name = "Republik",
-        TEAM_STUDENT,
+    {
+        name = "Zivilist",
+        icon = Material("swtor_charsys/civ_logo.png"),
     },
-    ["neutral"] = {
-        name = "Neutral",
-        TEAM_CIVILIAN,  
+    {
+        name = "Galaktische Republik",
+        icon = Material("swtor_charsys/jedi_logo.png"),
     },
+
 }
