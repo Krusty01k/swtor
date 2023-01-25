@@ -33,7 +33,7 @@ function SCS_FactionSelectMenu()
     for i, v in pairs(SWTOR.CHARACTER.Config.Factions) do
         local FactionSelectButton = FactionSelectBackground:Add("DButton", FactionSelectBackground)
         FactionSelectButton:SetSize(256, 256)
-        FactionSelectButton:SetPos((i - 1) * 300 + 500, ScrH() / 2 - 150 + 100)
+        FactionSelectButton:SetPos((i - 1) * 300 + (ScrW() * 0.32), ScrH() / 2 - 150 + 100)
         FactionSelectButton:SetText("")
         FactionSelectButton.Paint = function(self, w, h)
             if self:IsHovered() then 
@@ -52,8 +52,6 @@ function SCS_FactionSelectMenu()
     end
 
 end 
-
-SCS_FactionSelectMenu()
 
 net.Receive("SWTOR.OpenCharMenu", function()
     SCS_FactionSelectMenu()
