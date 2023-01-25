@@ -1,4 +1,4 @@
-SCS = SCS or {}
+if not CLIENT then return end 
 
 surface.CreateFont("SCS.FactionSelectFont", {
     font = "Roboto",
@@ -15,7 +15,7 @@ local logo = Material("swtor_charsys/logo.png")
 function SCS_FactionSelectMenu()
     local FactionSelectBackground = vgui.Create("DFrame")
     FactionSelectBackground:SetPos(0, 0)
-    FactionSelectBackground:SetSize(surface.ScreenWidth(), surface.ScreenHeight())
+    FactionSelectBackground:SetSize(ScrW(), ScrH())
     FactionSelectBackground:SetTitle("")
     FactionSelectBackground:ShowCloseButton(true)
     FactionSelectBackground:SetDraggable(false)
@@ -31,7 +31,7 @@ function SCS_FactionSelectMenu()
     end
     
     for i, v in pairs(SWTOR.CHARACTER.Config.Factions) do
-        local FactionSelectButton = vgui.Create("DButton", FactionSelectBackground)
+        local FactionSelectButton = FactionSelectBackground:Add("DButton", FactionSelectBackground)
         FactionSelectButton:SetSize(256, 256)
         FactionSelectButton:SetPos((i - 1) * 300 + 500, ScrH() / 2 - 150 + 100)
         FactionSelectButton:SetText("")
@@ -55,7 +55,7 @@ end
 
 SCS_FactionSelectMenu()
 
-net.Receive("SWTOR.OpenCharMenuOnSpawn", function()
+net.Receive("SWTOR.OpenCharMenu", function()
     SCS_FactionSelectMenu()
 end)
 

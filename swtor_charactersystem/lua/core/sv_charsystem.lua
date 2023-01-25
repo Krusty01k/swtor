@@ -1,6 +1,6 @@
-util.AddNetworkString("SWTOR.OpenCharMenuOnSpawn")
+util.AddNetworkString("SWTOR.OpenCharMenu")
 
-hook.Add("PlayerInitialSpawn", "SWTOR.OpenCharMenuOnSpawn", function(ply)
-    net.Start("SWTOR.OpenCharMenuOnSpawn")
+hook.Add("PlayerSpawn", "SWTOR.OpenChar", function(ply)
+    net.Start("SWTOR.OpenCharMenu")
     net.Send(ply)
-end) 
+end)
